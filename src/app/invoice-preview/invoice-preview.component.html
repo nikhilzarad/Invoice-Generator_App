@@ -1,0 +1,57 @@
+<div class="invoice-preview-container">
+  <h1 class="invoice-title">Invoice Preview</h1>
+
+  <div *ngIf="recievedInvoiceData; else noData" class="invoice-content">
+    <!-- Invoice Header -->
+    <div class="invoice-header">
+      <div class="invoice-detail">
+        <strong>Invoice Number:</strong> {{ recievedInvoiceData.invoiceNumber || 'N/A' }}
+      </div>
+      <div class="invoice-detail">
+        <strong>Date:</strong> {{ currentDate | date:'dd/MM/yyyy' }}
+      </div>
+    </div>
+
+    <!-- Customer Information -->
+    <div class="customer-info">
+      <h2>Customer Details</h2>
+      <div class="invoice-detail">
+        <strong>Name:</strong> {{ recievedInvoiceData.customerName || 'N/A' }}
+      </div>
+      <div class="invoice-detail">
+        <strong>Address:</strong> {{ recievedInvoiceData.customerAddress || 'N/A' }}
+      </div>
+      <div class="invoice-detail">
+        <strong>Email:</strong> {{ recievedInvoiceData.customerEmail || 'N/A' }}
+      </div>
+      <div class="invoice-detail">
+        <strong>Phone:</strong> {{ recievedInvoiceData.customerContact || 'N/A' }}
+      </div>
+    </div>
+
+    <!-- Amount Information -->
+    <div class="amount-info">
+      <h2>Amount Details</h2>
+      <div class="invoice-detail" *ngFor="let item of recievedInvoiceData.items">
+        <strong>Amount:</strong> {{ item.totalPrice || 'N/A' }}
+      </div>
+      
+    
+      <div class="invoice-detail">
+        <strong>Tax:</strong> {{ recievedInvoiceData.tax || 'N/A' }}
+      </div>
+     
+    </div>
+
+
+    <!-- Actions -->
+    <div class="actions">
+      <button mat-raised-button style="border-radius: 13px;background-color: #48a3df;color: black;" (click)="onDownloadPDF()">Download PDF</button>
+      <button mat-raised-button color="accent" [routerLink]="['/invoice']" style="border-radius: 13px;background-color: rgb(223, 90, 19);color: black;" routerLinkActive="router-link-active" > Home</button>
+    </div>
+  </div>
+
+  <ng-template #noData>
+    <p class="no-data-message">No invoice data available.</p>
+  </ng-template>
+</div>

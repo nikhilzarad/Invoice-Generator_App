@@ -1,0 +1,107 @@
+<section>
+  <div class="orderAlign">  
+    <h2>Invoice Form</h2>
+    <button class="preview-btn" mat-button routerLink="/preview" (click)="sendToPreview(invoiceForm.value)">Preview Invoice</button>
+  </div>
+
+  <form [formGroup]="invoiceForm" (ngSubmit)="onSubmit()">
+    <div class="orderAlign">
+      <h3>Customer Details</h3>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="customerName">Customer Name:</label>
+        <input id="customerName" formControlName="customerName" required
+          [ngClass]="{'error-border': invoiceForm.get('customerName')?.invalid && invoiceForm.get('customerName')?.touched}" />
+        <div *ngIf="invoiceForm.get('customerName')?.invalid && invoiceForm.get('customerName')?.touched"
+          class="error-message">
+          Customer Name is required.
+        </div>
+      </div>
+
+      <div class="form-group" >
+        <label for="customerEmail">Customer Email:</label>
+        <input id="customerEmail" type="email" formControlName="customerEmail" required
+          [ngClass]="{'error-border': invoiceForm.get('customerEmail')?.invalid && invoiceForm.get('customerEmail')?.touched}" />
+        <div *ngIf="invoiceForm.get('customerEmail')?.invalid && invoiceForm.get('customerEmail')?.touched"
+          class="error-message">
+          Please enter a valid email address.
+        </div>
+
+      </div>
+    </div>
+
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="customerContact">Customer Contact:</label>
+          <input id="customerContact" formControlName="customerContact" required
+            [ngClass]="{'error-border': invoiceForm.get('customerContact')?.invalid && invoiceForm.get('customerContact')?.touched}" />
+          <div *ngIf="invoiceForm.get('customerContact')?.invalid && invoiceForm.get('customerContact')?.touched"
+            class="error-message">
+            Customer Contact is required.
+          </div>
+        </div>
+      </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="customerAddress">Customer Address:</label>
+            <input id="customerAddress" formControlName="customerAddress" required
+              [ngClass]="{'error-border': invoiceForm.get('customerAddress')?.invalid && invoiceForm.get('customerAddress')?.touched}" />
+            <div *ngIf="invoiceForm.get('customerAddress')?.invalid && invoiceForm.get('customerAddress')?.touched"
+              class="error-message">
+              Customer Address is required.
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <section>
+          <div class="orderAlign">
+            <h3>Order Details </h3>
+            <button  mat-button type="button" class="add-btn" (click)="addItems()">Add Items</button>
+          </div>
+          <table class="table table-hover table-bordered">
+            <thead>
+              <tr>
+                <th>Item name</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Total price</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody formArrayName="items">
+              <tr *ngFor="let item of items.controls; let i = index" [formGroupName]="i">
+                <td>
+                  <input type="text" class="form-control invoice-form-input" formControlName="description" />
+                </td>
+                <td>
+                  <input type="number" class="form-control invoice-form-input" formControlName="quantity" />
+                </td>
+                <td>
+                  <input type="number" class="form-control invoice-form-input" formControlName="price" />
+                </td>
+                <td>
+                  <input type="number" class="form-control invoice-form-input" formControlName="totalPrice" />
+                </td>
+                <td>
+                  <button type="button" class="remove-btn" (click)="removeItems(i)">Remove</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <div class="total-section">
+          <h3>Total Amount: &#2352; {{totalAmount }} </h3>
+        </div>
+
+      </form>
+      <div>
+        <button type="submit" [disabled]="invoiceForm.invalid" class="submit-btn" routerLink="/itemList" (click)="generatePDF()">Generate Invoice</button>
+      </div>
+</section>

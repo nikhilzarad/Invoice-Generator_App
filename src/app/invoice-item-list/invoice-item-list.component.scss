@@ -1,0 +1,301 @@
+/* Default styles for buttons */
+.edit-button,
+.delete-button,
+.add-button {
+  margin: 8px;
+}
+.remarks-cell {
+  white-space: pre-wrap; /* Preserves whitespace and wraps text */
+  word-wrap: break-word; /* Breaks long words to fit within the cell */
+  word-break: break-word; /* Ensures long words break properly */
+  overflow-wrap: break-word; /* Adds support for modern browsers */
+  max-width: 100%; /* Ensures the cell doesn't exceed the device width */
+}
+
+.add-task-container {
+  display: flex;
+  justify-content: flex-start;
+  /* Align the button to the start of the container */
+  margin-bottom: 16px;
+  /* Add spacing below the container */
+  margin-top: 5px;
+  margin-left: 16px;
+  /* Add spacing to the left */
+}
+
+/* Apply the font style to mat-header-cell */
+.mat-mdc-header-cell {
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  // font-weight: bold;
+  font-style: normal;
+  // font-size: 16px; /* Default font size */
+  color: #333;
+  /* Default color */
+}
+
+.mdc-data-table__cell {
+  font-family: cursive;
+}
+
+/* Dialog container styles */
+.mat-dialog-container {
+  max-width: 600px;
+  /* Default max width for larger screens */
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+}
+
+/* General table styles */
+table {
+  width: 100%; /* Ensure the table takes full width */
+  border-collapse: collapse; /* Remove gaps between table cells */
+  margin-bottom: 16px; /* Add spacing below the table */
+  overflow-x: auto; /* Enable horizontal scrolling for small screens */
+  // display: block; /* Allow the table to scroll horizontally */
+}
+
+/* Table header styles */
+th {
+  font-size: 16px;
+  padding: 8px;
+  text-align: left;
+  background-color: #f4f4f4; /* Light background for headers */
+  color: #333; /* Dark text color */
+  white-space: nowrap; /* Prevent header text from wrapping */
+}
+
+/* Table cell styles */
+td {
+  font-size: 14px;
+  padding: 8px;
+  word-wrap: break-word; /* Break long words */
+  word-break: break-word; /* Ensure long words break properly */
+  overflow-wrap: break-word; /* Adds support for modern browsers */
+}
+
+/* Remarks column specific styles */
+.remarks-cell {
+  white-space: pre-wrap; /* Preserve whitespace and wrap text */
+  word-wrap: break-word; /* Break long words */
+  word-break: break-word; /* Ensure long words break properly */
+  overflow-wrap: break-word; /* Adds support for modern browsers */
+  max-width: 300px; /* Set a maximum width for the cell */
+}
+
+mat-paginator {
+  margin-top: 20px;
+}
+
+/* Responsive styles for tablets */
+@media (max-width: 768px) {
+
+  .edit-button,
+  .delete-button,
+  .add-button {
+    margin: 3px;
+
+  }
+
+  .mat-dialog-container {
+    max-width: 70%;
+    height: auto;
+    /* Reduce the container width */
+    padding: 12px;
+
+  }
+
+  table {
+    font-size: 14px; /* Reduce font size for smaller screens */
+    margin-bottom: 12px;
+    /* Reduce spacing below the table */
+  }
+
+  th, td {
+    padding: 6px; /* Reduce padding */
+  }
+
+  th {
+    font-size: 17px;
+    /* Reduce font size */
+    padding: 4px;
+    /* Reduce padding */
+  }
+
+  td {
+    // font-size: 
+    font-family: cursive;
+    /* Reduce font size */
+    padding: 4px;
+    /* Reduce padding */
+  }
+
+  .mat-dialog-title {
+    font-size: 20px;
+    /* Reduce font size for the title */
+  }
+
+
+  mat-paginator {
+    margin-top: 20px;
+  }
+
+  .remarks-cell {
+    max-width: 90%; /* Adjust max width for tablets */
+  }
+}
+
+/* Responsive styles for devices with width 425px */
+@media (max-width: 425px) {
+
+  .edit-button,
+  .delete-button,
+  .add-button {
+    margin: 3px;
+  }
+
+  .mat-dialog-container {
+    max-width: 70%;
+    height: auto;
+    /* Reduce the container width */
+    padding: 12px;
+    /* Reduce padding */
+  }
+
+  table {
+    font-size: 12px; /* Further reduce font size */
+    margin-bottom: 12px;
+  }
+
+  th, td {
+    padding: 4px; /* Further reduce padding */
+  }
+
+  th {
+    font-size: 12px;
+    padding: 2px;
+  }
+
+  .mat-dialog-title {
+    font-size: 20px;
+    /* Reduce font size for the title */
+  }
+
+
+  mat-paginator {
+    margin-top: 20px;
+  }
+
+  .remarks-cell {
+    max-width: 80%; /* Adjust max width for small devices */
+  }
+}
+
+/* Responsive styles for devices with width 375px */
+@media (max-width: 375px) {
+
+  .edit-button,
+  .delete-button,
+  .add-button {
+    margin: 3px;
+  }
+
+  .mat-dialog-container {
+    max-width: 70%;
+    height: auto;
+    /* Reduce the container width */
+    padding: 12px;
+    /* Reduce padding */
+  }
+
+  table {
+    margin-bottom: 12px;
+  }
+
+  th {
+
+    font-size: 8px;
+    padding: 4px;
+  }
+
+  .mat-dialog-title {
+    font-size: 20px;
+    /* Reduce font size for the title */
+  }
+
+
+  mat-paginator {
+    margin-top: 20px;
+  }
+}
+
+/* Responsive styles for devices with width 320px */
+@media (max-width: 320px) {
+
+  /* Buttons */
+  .edit-button,
+  .delete-button,
+  .add-button {
+    // min-width: 10px;
+    margin: 3px;
+    /* Reduce font size */
+  }
+
+  /* Dialog Container */
+  .mat-dialog-container {
+    max-width: 90%;
+    /* Reduce the container width */
+    height: auto;
+    /* Adjust height dynamically */
+    padding: 10px;
+    /* Further reduce padding */
+    border-radius: 6px;
+    /* Adjust border radius */
+  }
+
+  /* Table */
+  table {
+    font-size: 10px; /* Reduce font size for very small screens */
+    margin-bottom: 12px;
+  }
+
+  th, td {
+    padding: 2px; /* Minimize padding */
+  }
+
+  th {
+    font-size: 9px;
+    padding: 3px;
+  }
+
+  /* Dialog Title */
+  .mat-dialog-title {
+    font-size: 16px;
+    /* Further reduce font size */
+    text-align: center;
+    /* Center align the title */
+  }
+
+  /* Paginator */
+  mat-paginator {
+    margin-top: 16px;
+    /* Adjust spacing above the paginator */
+
+  }
+
+  .remarks-cell {
+    max-width: 70%; /* Adjust max width for very small devices */
+  }
+}
+.headerAlign{
+    font-family: "Josefin Sans", sans-serif;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    /* Default color */
+}

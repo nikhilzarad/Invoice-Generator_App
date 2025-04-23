@@ -1,0 +1,138 @@
+.invoice-preview-container {
+  max-width: 800px;
+  // margin: 40px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+
+  @media (max-width: 768px) {
+    padding: 15px;
+    margin: 20px auto;
+  }
+
+  @media (max-width: 480px) {
+    padding: 10px;
+    margin: 10px auto;
+  }
+}
+
+.invoice-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  color: #3f51b5;
+  margin-bottom: 20px;
+
+  @media (max-width: 768px) {
+    font-size: 24px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 20px;
+  }
+}
+
+.invoice-content {
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+
+  @media (max-width: 768px) {
+    padding: 15px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 10px;
+  }
+}
+
+.invoice-header,
+.customer-info,
+.amount-info,
+.notes-info {
+  margin-bottom: 20px;
+
+  @media (max-width: 768px) {
+    margin-bottom: 15px;
+  }
+
+  @media (max-width: 480px) {
+    margin-bottom: 10px;
+  }
+}
+
+h2 {
+  font-size: 20px;
+  color: #3f51b5;
+  margin-bottom: 10px;
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 16px;
+  }
+}
+
+.invoice-detail {
+  font-size: 16px;
+  margin-bottom: 8px;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 12px;
+  }
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  @media (max-width: 480px) {
+    margin-top: 15px;
+  }
+}
+
+button {
+  font-size: 14px;
+  padding: 10px 20px;
+
+  @media (max-width: 768px) {
+    font-size: 12px;
+    padding: 8px 16px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 10px;
+    padding: 6px 12px;
+  }
+}
+
+.no-data-message {
+  text-align: center;
+  font-size: 18px;
+  color: #757575;
+  font-style: italic;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 14px;
+  }
+}

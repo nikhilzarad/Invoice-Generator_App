@@ -1,0 +1,33 @@
+<div class="headerAlign">
+    <h2>Invoice Items List</h2>
+</div>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <!-- Customer Name Column -->
+  <ng-container matColumnDef="customerName">
+    <th mat-header-cell *matHeaderCellDef> Customer Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.customerName}} </td>
+  </ng-container>
+
+  <!-- Customer Email Column -->
+  <ng-container matColumnDef="customerEmail">
+    <th mat-header-cell *matHeaderCellDef> Customer Email </th>
+    <td mat-cell *matCellDef="let element"> {{element.customerEmail}} </td>
+  </ng-container>
+
+  <!-- Customer Contact Column -->
+  <ng-container matColumnDef="customerContact">
+    <th mat-header-cell *matHeaderCellDef> Customer Contact </th>
+    <td mat-cell *matCellDef="let element"> {{element.customerContact}} </td>
+  </ng-container>
+
+  <!-- Total Price Column -->
+  <ng-container matColumnDef="totalPrice">
+    <th mat-header-cell *matHeaderCellDef> Total Price </th>
+    <td mat-cell *matCellDef="let element"> {{element.totalPrice}} </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
